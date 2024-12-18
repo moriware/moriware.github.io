@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  background: #121212;
+}
+
+header h1 {
+  margin: 0;
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+header .mori {
+  color: #FFFFFF;
+}
+
+header .ware {
+  color: #4F88E4;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 3rem;
+  font-family: 'Dhurjati', sans-serif;
+  margin-bottom: 10px;
+}
+
+main p {
+  font-size: 1.2rem;
+  max-width: 300px;
+  color: #CCCCCC;
+}
+
+footer {
+  background: #121212;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #333333;
+}
+
+footer p {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #AAAAAA;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  color: #4F88E4;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
