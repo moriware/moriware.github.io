@@ -263,14 +263,18 @@ main p {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10; /* Define um z-index menor */
+  pointer-events: none; /* Desativa eventos de ponteiro por padrão */
 }
 
 .projeto:hover .overlay {
   opacity: 1;
+  pointer-events: auto; /* Ativa eventos de ponteiro quando ativo */
 }
 
 .projeto .play-button {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -283,11 +287,11 @@ main p {
 }
 
 .projeto .play-button:hover {
-  background: rgba(255, 255, 255, 1);
+  background: #3a6fb0;
 }
 
 .projeto .play-button i {
-  color: #333333;
+  color: var(--color-white);
   font-size: 1.5rem;
 }
 
@@ -305,6 +309,42 @@ main p {
 .projeto img {
   width: 100%;
   border-radius: 10px;
+}
+
+/* Novo contêiner para a imagem e overlay */
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; /* Garante que o overlay não ultrapasse os limites da imagem */
+}
+
+/* Ajustar o overlay para cobrir apenas a imagem */
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Mantém o overlay abaixo dos botões GitHub */
+  pointer-events: none; /* Desativa eventos de ponteiro por padrão */
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  pointer-events: auto; /* Ativa eventos de ponteiro quando ativo */
+}
+
+/* Garantir que os botões GitHub fiquem acima do overlay */
+.projeto .button-primary {
+  position: relative;
+  z-index: 20; /* Define um z-index maior que o overlay */
 }
 
 .projeto h3 {
@@ -432,6 +472,8 @@ footer ul li a:hover {
   transition: background-color var(--transition-speed);
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  z-index: 20; /* Define um z-index maior que o overlay */
 }
 
 .button-primary:hover {

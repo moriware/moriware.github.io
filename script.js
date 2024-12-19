@@ -112,6 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const initGitHubButtons = () => {
+    const gitHubButtons = document.querySelectorAll('.button-primary');
+    gitHubButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation(); // Previne que o evento clique se propague para elementos pais
+      });
+    });
+  };
+
   initCurrentYear();
   initProjectAnimations();
   initFeatureAnimations();
@@ -120,4 +129,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactButtonScroll();
   initPlayButtons();
   initModalClose();
+  initGitHubButtons();
 });
