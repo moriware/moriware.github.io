@@ -282,6 +282,10 @@ main p {
   padding: 50px 0;
   background-color: #121212;
   text-align: center;
+  background-image: url('assets/hachigo.png');
+  background-repeat: no-repeat;
+  background-position: 10vw bottom; /* Move a imagem 20px para a direita */
+  background-size: 150px; /* Ajustar conforme necessário */
 }
 
 #contato h2 {
@@ -391,5 +395,11 @@ footer ul li a:hover {
   .projeto {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  #contato {
+    background-image: none;
   }
 }
