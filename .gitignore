@@ -1,0 +1,28 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore compiled JavaScript files
+*.js.map
+
+# Ignore SASS/SCSS cache files
+.sass-cache/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore environment variable files
+.env
