@@ -73,10 +73,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Função para abrir o modal
+  const openModal = (videoSrc) => {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modalVideo.src = videoSrc;
+    modal.classList.add('active');
+  };
+
+  // Função para fechar o modal
+  const closeModal = () => {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.classList.remove('active');
+    modalVideo.src = '';
+  };
+
+  // Adicionar eventos aos botões de play
+  const initPlayButtons = () => {
+    const playButtons = document.querySelectorAll('.play-button');
+    playButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const videoSrc = button.getAttribute('data-video');
+        openModal(videoSrc);
+      });
+    });
+  };
+
+  // Evento para fechar o modal
+  const initModalClose = () => {
+    const closeBtn = document.getElementById('modalClose');
+    closeBtn.addEventListener('click', closeModal);
+    const modal = document.getElementById('videoModal');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  };
+
   initCurrentYear();
   initProjectAnimations();
   initFeatureAnimations();
   initTestimonialAnimation();
   initLogoScroll();
   initContactButtonScroll();
+  initPlayButtons();
+  initModalClose();
 });
