@@ -40,9 +40,7 @@ header {
 
 header img {
   margin: 0;
-  padding: 16px;
   font-family: var(--font-title);
-  font-size: 2.5rem;
   letter-spacing: 1px;
 }
 
@@ -546,6 +544,7 @@ footer ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .modal-close:hover {
