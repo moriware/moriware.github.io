@@ -82,28 +82,83 @@
       <h2>Nossos Projetos</h2>
       <div class="projetos-container">
         <div class="projeto">
-          <img src="project1.jpg" alt="Aplicativo Mobile" />
-          <h3>Aplicativo Mobile</h3>
+          <div class="image-container">
+            <img src="assets/chef-delivery-demo.gif" alt="Aplicativo Mobile" />
+            <!-- Overlay com botão de play -->
+            <div class="overlay">
+              <button class="play-button" data-video="assets/chef-delivery.mp4">
+                <i class="bx bx-play"></i>
+              </button>
+            </div>
+          </div>
+          <h3>Chef Delivery</h3>
           <p>
-            Desenvolvimento de aplicativos móveis personalizados para melhorar a
-            interação com o cliente.
+            Aplicativo mobile para delivery de alimentos, com funcionalidades de
+            animação, gestos, design responsivo e integração com API.
           </p>
+          <!-- Botão para GitHub -->
+          <a
+            href="https://github.com/CaioMori/ChefDelivery"
+            target="_blank"
+            class="button-primary"
+            >Ver no GitHub</a
+          >
         </div>
         <div class="projeto">
-          <img src="project2.jpg" alt="Sistema Web Integrado" />
+          <div class="image-container">
+            <img src="project2.jpg" alt="Sistema Web Integrado" />
+            <div class="overlay">
+              <button class="play-button" data-video="assets/sistema-web.mp4">
+                <i class="bx bx-play"></i>
+              </button>
+            </div>
+          </div>
           <h3>Sistema Web Integrado</h3>
           <p>
             Sistemas web eficientes que otimizam processos e aumentam a
             produtividade da sua empresa.
           </p>
+          <a
+            href="https://github.com/seu-usuario/sistema-web-integrado"
+            target="_blank"
+            class="button-primary"
+            >Ver no GitHub</a
+          >
         </div>
         <div class="projeto">
-          <img src="project3.jpg" alt="Inteligência Artificial" />
+          <div class="image-container">
+            <img src="project3.jpg" alt="Inteligência Artificial" />
+            <div class="overlay">
+              <button
+                class="play-button"
+                data-video="assets/inteligencia-artificial.mp4"
+              >
+                <i class="bx bx-play"></i>
+              </button>
+            </div>
+          </div>
           <h3>Inteligência Artificial</h3>
           <p>Soluções em IA para análise de dados e insights estratégicos.</p>
+          <a
+            href="https://github.com/seu-usuario/inteligencia-artificial"
+            target="_blank"
+            class="button-primary"
+            >Ver no GitHub</a
+          >
         </div>
       </div>
     </section>
+
+    <!-- Modal para vídeo -->
+    <div class="modal" id="videoModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <video id="modalVideo" controls>
+          <source src="" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </div>
+    </div>
 
     <section id="contato">
       <h2>Entre em Contato</h2>
