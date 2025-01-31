@@ -353,68 +353,6 @@ main p {
   line-height: 1.4;
 }
 
-#contato {
-  padding: 50px 0;
-  background-color: #121212;
-  text-align: center;
-  background-image: url('assets/hachigo.png');
-  background-repeat: no-repeat;
-  background-position: 10vw bottom; /* Move a imagem 20px para a direita */
-  background-size: 150px; /* Ajustar conforme necessário */
-}
-
-#contato h2 {
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  margin-bottom: 40px;
-}
-
-#contato form {
-  display: inline-block;
-  max-width: 500px;
-  width: 100%;
-  text-align: left;
-}
-
-#contato input,
-#contato textarea,
-#contato input[type='submit'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #1e1e1e;
-  border: 1px solid var(--color-gray-dark);
-  color: var(--color-white);
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-family: var(--font-body);
-  font-size: 1rem;
-}
-
-#contato textarea {
-  resize: none;
-  min-height: 100px;
-}
-
-#contato input[type='submit'] {
-  background-color: var(--color-primary);
-  border: none;
-  cursor: pointer;
-  transition: background-color var(--transition-speed);
-  box-sizing: border-box;
-  font-weight: bold;
-}
-
-#contato input[type='submit']:hover {
-  background-color: #3a6fb0;
-}
-
-#contato input:focus,
-#contato textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
-
 footer {
   background: #121212;
   text-align: center;
