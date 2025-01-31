@@ -188,7 +188,7 @@
     <!-- Projetos -->
     <section
       id="projetos"
-      class="py-20 bg-gradient-to-b from-gray-900 to-gray-800 relative overflow-hidden"
+      class="py-20 bg-gradient-to-b from-gray-800 to-gray-900 relative overflow-hidden"
     >
       <div class="container mx-auto px-4 relative z-10">
         <!-- Cabeçalho com animação sutil -->
@@ -204,37 +204,18 @@
           <div
             class="project-card group relative bg-gray-800 rounded-xl p-6 border-2 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
-            <div class="relative overflow-hidden rounded-lg aspect-video">
+            <div class="relative overflow-hidden rounded-lg aspect-square">
               <img
-                src="assets/chef-delivery-demo.gif"
+                src="assets/chef-delivery-demo.png"
                 alt="Chef Delivery: Revolucionando entregas de comida"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
               />
 
-              <!-- Overlay Interativo -->
-              <div
-                class="video-overlay absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <button
-                  class="play-button pulse-animation"
-                  data-video="assets/chef-delivery.mp4"
-                  aria-label="Assistir demonstração"
-                >
-                  <div
-                    class="inner-circle bg-blue-500/20 hover:bg-blue-500/30 transition-colors"
-                  >
-                    <i
-                      class="bx bx-play text-4xl text-white drop-shadow-lg"
-                    ></i>
-                  </div>
-                </button>
-              </div>
-
               <!-- Badge de Destaque -->
               <span
-                class="absolute top-4 right-4 bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"
+                class="absolute top-4 right-4 bg-red-500/50 text-red-900 px-3 py-1 rounded-full text-sm font-semibold animate-pulse"
               >
-                🚀 Mais Popular
+                <i class="bx bxs-rocket mr-1"></i> Mais Popular
               </span>
             </div>
 
@@ -242,7 +223,7 @@
               <div class="flex items-center justify-between mb-3">
                 <h3 class="text-2xl font-bold text-gray-100">Chef Delivery</h3>
                 <span class="text-sm text-green-400 flex items-center">
-                  <i class="bx bx-download mr-1"></i> 50k+ downloads
+                  <i class="bx bx-devices mr-1"></i> iOS, iPadOS
                 </span>
               </div>
 
@@ -253,14 +234,28 @@
                 para delivery de alimentos com:
                 <span class="highlight-text">animações premium</span>,
                 <span class="highlight-text">gestos intuitivos</span>, e
-                <span class="highlight-text">integração AI-powered</span>.
+                <span class="highlight-text">integração de API</span>.
               </p>
 
-              <!-- Social Proof -->
-              <div class="testimonial-badge bg-gray-700/30 p-3 rounded-lg mb-4">
-                <div class="flex items-center">
-                  <i class="bx bxs-star text-yellow-400 mr-2"></i>
-                  <span class="text-sm text-gray-300">4.9/5 (2k+ reviews)</span>
+              <!-- Stack -->
+              <div class="testimonial-badge p-3 rounded-lg mb-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
+                    >Swift</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm"
+                    >SwiftUI</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm"
+                    >MVVM</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+                    >Alamofire</span
+                  >
                 </div>
               </div>
 
@@ -276,111 +271,143 @@
             </div>
           </div>
 
-          <!-- Projeto 2 - Vapor -->
+          <!-- Projeto 2 - VollMed -->
           <div
-            class="project-card group relative bg-gray-800 rounded-xl p-6 border-2 border-gray-700 hover:border-purple-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            class="project-card group relative bg-gray-800 rounded-xl p-6 border-2 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
-            <div class="relative overflow-hidden rounded-lg aspect-video">
+            <div class="relative overflow-hidden rounded-lg aspect-square">
               <img
-                src="assets/vapor-demo.png"
-                alt="Vapor: Potência em backend"
+                src="assets/vollmed-demo.png"
+                alt="Chef Delivery: Revolucionando entregas de comida"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
               />
 
-              <!-- Badge Novidade -->
+              <!-- Badge de Destaque -->
               <span
-                class="absolute top-4 right-4 bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold"
+                class="absolute top-4 right-4 bg-cyan-500/50 text-cyan-900 px-3 py-1 rounded-full text-sm font-semibold"
               >
-                🔥 Novidade
+                <i class="bx bxl-sketch mr-1"></i> Exclusivo
               </span>
             </div>
 
             <div class="pt-6">
-              <h3 class="text-2xl font-bold text-gray-100 mb-3">
-                Vapor Engine
-              </h3>
-
-              <p class="text-gray-300 mb-4 leading-relaxed">
-                Backend de alta performance com
-                <span class="text-purple-400 font-semibold"
-                  >escalabilidade horizontal</span
-                >
-                e <span class="highlight-text">tempo real</span> para aplicações
-                críticas.
-              </p>
-
-              <!-- Dados de Performance -->
-              <div class="performance-stats grid grid-cols-2 gap-3 mb-4">
-                <div class="bg-gray-700/20 p-2 rounded-lg text-center">
-                  <div class="text-purple-400 text-xl font-bold">1.2M RPM</div>
-                  <div class="text-xs text-gray-400">Requests</div>
-                </div>
-                <div class="bg-gray-700/20 p-2 rounded-lg text-center">
-                  <div class="text-green-400 text-xl font-bold">99.99%</div>
-                  <div class="text-xs text-gray-400">Uptime</div>
-                </div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-2xl font-bold text-gray-100">VollMed</h3>
+                <span class="text-sm text-green-400 flex items-center">
+                  <i class="bx bx-devices mr-1"></i> iOS, iPadOS
+                </span>
               </div>
 
-              <a
-                href="https://github.com/CaioMori"
-                target="_blank"
-                class="w-full button-primary-gradient flex items-center justify-center gap-2 hover:gap-3 transition-all"
-              >
-                <i class="bx bxl-github text-xl"></i>
-                Descubra a Arquitetura
-              </a>
-            </div>
-          </div>
-
-          <!-- Projeto 3 - IA (FOMO) -->
-          <div
-            class="project-card group relative bg-gray-800 rounded-xl p-6 border-2 border-gray-700 hover:border-green-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-          >
-            <div class="relative overflow-hidden rounded-lg aspect-video">
-              <img
-                src="project3.jpg"
-                alt="IA: O futuro dos negócios"
-                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-              />
-
-              <!-- Badge Exclusivo -->
-              <span
-                class="absolute top-4 right-4 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                ⚡ Exclusivo
-              </span>
-            </div>
-
-            <div class="pt-6">
-              <h3 class="text-2xl font-bold text-gray-100 mb-3">
-                AI Revolution
-              </h3>
-
               <p class="text-gray-300 mb-4 leading-relaxed">
-                <span class="text-green-400 font-semibold"
-                  >Soluções preditivas</span
+                <span class="text-purple-400 font-semibold"
+                  >App inteligente</span
                 >
-                que <span class="highlight-text">aumentam em 300%</span> a
-                eficiência operacional através de análise cognitiva.
+                desenvolvido com foco em:
+                <span class="highlight-text">usabilidade</span>,
+                <span class="highlight-text">escalabilidade</span>, e boas
+                práticas de <span class="highlight-text">desenvolvimento</span>.
               </p>
 
-              <!-- Case de Sucesso -->
-              <div class="case-study bg-gray-700/20 p-3 rounded-lg mb-4">
-                <div class="flex items-center text-sm">
-                  <i class="bx bx-trending-up text-green-400 mr-2"></i>
-                  <span class="text-gray-300"
-                    >+R$2.1M gerados para clientes</span
+              <!-- Stack -->
+              <div class="testimonial-badge p-3 rounded-lg mb-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
+                    >Swift</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm"
+                    >SwiftUI</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm"
+                    >Keychain</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm"
+                    >MVVM</span
                   >
                 </div>
               </div>
 
+              <!-- CTA Estratégico -->
               <a
-                href="https://github.com/seu-usuario/inteligencia-artificial"
+                href="https://github.com/CaioMori/vollmed"
                 target="_blank"
                 class="w-full button-primary-gradient flex items-center justify-center gap-2 hover:gap-3 transition-all"
               >
                 <i class="bx bxl-github text-xl"></i>
-                Acesse a Inovação
+                Explore o Código Fonte
+              </a>
+            </div>
+          </div>
+
+          <!-- Projeto 3 - MoriBank -->
+          <div
+            class="project-card group relative bg-gray-800 rounded-xl p-6 border-2 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+          >
+            <div class="relative overflow-hidden rounded-lg aspect-square">
+              <img
+                src="assets/moribank-demo.png"
+                alt="Chef Delivery: Revolucionando entregas de comida"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+              />
+
+              <!-- Badge de Destaque -->
+              <span
+                class="absolute top-4 right-4 bg-emerald-500/50 text-emerald-900 px-3 py-1 rounded-full text-sm font-semibold"
+              >
+                <i class="bx bxs-message-rounded-add mr-1"></i>
+                Novidade
+              </span>
+            </div>
+
+            <div class="pt-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-2xl font-bold text-gray-100">Chef Delivery</h3>
+                <span class="text-sm text-green-400 flex items-center">
+                  <i class="bx bx-devices mr-1"></i> iOS
+                </span>
+              </div>
+
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                <span class="text-lime-400 font-semibold">Aplicativo</span>
+                para delivery de alimentos com:
+                <span class="highlight-text">animações premium</span>,
+                <span class="highlight-text">gestos intuitivos</span>, e
+                <span class="highlight-text">integração de API</span>.
+              </p>
+
+              <!-- Stack -->
+              <div class="testimonial-badge p-3 rounded-lg mb-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
+                    >Swift</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm"
+                    >SwiftUI</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm"
+                    >MVVM</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+                    >Alamofire</span
+                  >
+                </div>
+              </div>
+
+              <!-- CTA Estratégico -->
+              <a
+                href="https://github.com/CaioMori/ChefDelivery"
+                target="_blank"
+                class="w-full button-primary-gradient flex items-center justify-center gap-2 hover:gap-3 transition-all"
+              >
+                <i class="bx bxl-github text-xl"></i>
+                Explore o Código Fonte
               </a>
             </div>
           </div>
