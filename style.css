@@ -515,3 +515,88 @@ footer ul li a:hover {
     background-image: none;
   }
 }
+
+/* Animações */
+@keyframes gradient-pulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-title {
+  background-size: 200% auto;
+  animation: gradient-pulse 6s ease infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Efeitos Visuais */
+.button-primary-gradient {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-primary-gradient:hover {
+  background: linear-gradient(45deg, #8b5cf6, #3b82f6);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.highlight-text:hover::after {
+  transform: scaleX(1);
+}
+
+#videoModal {
+  display: none; /* Garante o estado inicial oculto */
+}
+
+#videoModal video {
+  width: 80%;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+  #videoModal video {
+    width: 95%;
+  }
+}
