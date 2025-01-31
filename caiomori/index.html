@@ -42,6 +42,8 @@
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Favicon -->
@@ -64,18 +66,11 @@
     />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .section-anchor {
-        scroll-margin-top: 6rem;
-      }
-      .skill-badge {
-        transition: transform 0.2s ease;
-      }
-      .skill-badge:hover {
-        transform: translateY(-2px);
-      }
-    </style>
+    <!-- Ícone da aba -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/svg+xml" />
+
+    <!-- Estilos -->
+    <link href="../src/output.css" rel="stylesheet" />
   </head>
 
   <body class="bg-gray-900 text-gray-100 font-['Open_Sans']">

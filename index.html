@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- Meta Tags SEO Avançadas -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="MoriWare - Soluções tecnológicas personalizadas que transformam seu negócio. Inovação, escalabilidade e segurança digital."
+      content="MoriWare: Desenvolvimento de software sob medida com foco em inovação, escalabilidade e segurança. Transforme seu negócio com soluções tecnológicas de alto impacto."
     />
-    <title>MoriWare</title>
+    <meta name="keywords" content="desenvolvimento de software, aplicativos mobile, soluções tecnológicas, SEO, segurança digital, escalabilidade">
+    <meta name="author" content="Caio Mori">
+    <meta property="og:title" content="MoriWare - Soluções Tecnológicas de Alto Impacto">
+    <meta property="og:type" content="website">
+    
+    <title>MoriWare - Desenvolvimento de Software Sob Medida | Soluções Tecnológicas</title>
 
-    <!-- Preconexões otimizadas -->
+    <!-- Preconexões Otimizadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
 
-    <!-- Fontes -->
+    <!-- Fontes com Carregamento Prioritário -->
     <link
       href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/svg+xml" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <style>
-      .section-anchor {
-        scroll-margin-top: 6rem;
-      }
-      .skill-badge {
-        transition: transform 0.2s ease;
-      }
-      .skill-badge:hover {
-        transform: translateY(-2px);
-      }
-    </style>
+    <!-- Ícone da Aba com Versões Múltiplas -->
+    <link rel="icon" href="assets/favicon.ico" type="image/svg+xml" sizes="any">
+
+    <!-- Estilos -->
+    <link href="./src/output.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="bg-gray-900 text-gray-100 font-['Open_Sans']">
     <!-- Cabeçalho -->
     <header
       class="bg-gray-800/95 backdrop-blur-sm py-4 fixed w-full top-0 z-50 shadow-xl"
@@ -50,7 +50,7 @@
       >
         <a href="/" class="hover:opacity-80 transition-opacity">
           <img
-            src="assets/logo-name.svg"
+            src="../assets/logo-name.svg"
             alt="MoriWare - Desenvolvimento de Software"
             class="h-10 w-auto"
             width="180"
@@ -74,117 +74,92 @@
       </div>
     </header>
 
-    <main class="parallax bg-gray-900">
-      <h2>Soluções Tecnológicas Sob Medida</h2>
-      <p>
-        Transformamos ideias em realidades digitais, otimizando processos e
-        impulsionando o crescimento do seu negócio.
-      </p>
+    <!-- Hero Section -->
+    <main class="pt-32 pb-20 px-4 lg:px-8 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      <section class="container mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+          Transformação Digital <span class="block mt-2">Sob Medida</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Da concepção à implementação: desenvolvendo soluções tecnológicas que 
+          <span class="text-blue-400 font-semibold">aceleram resultados</span> e 
+          <span class="text-purple-400 font-semibold">superam expectativas</span>
+        </p>
 
-      <a
-        href="/caiomori"
-        rel="noopener"
-        class="border-2 border-blue-600 bg-gray-800 text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-800/20 transition-colors"
-      >
-        Conheça Caio Mori
-      </a>
-
-      <div
-        class="flex flex-col md:flex-row justify-center items-stretch gap-8 mt-12 px-4"
-      >
-        <!-- Cada card como elemento interativo -->
-        <div
-          class="feature-card group flex-1 max-w-xs p-8 bg-gray-700/50 hover:bg-gray-700/80 backdrop-blur-lg p-6 rounded-xl border border-gray-600/30 transition-all duration-300 hover:border-blue-400 hover:shadow-2xl hover:-translate-y-2 transform-gpu"
-        >
-          <!-- Container do ícone com gradiente e animação -->
-          <div
-            class="icon-container mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110"
+        <div class="flex flex-col md:flex-row justify-center gap-6 mb-20 ">
+          <a
+            href="mailto:caiomori22@gmail.com"
+            class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-lg hover:shadow-xl transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2 animate-pulse"
+            aria-label="Agendar Consultoria"
           >
-            <i class="bx bxs-bulb text-4xl text-white"></i>
-          </div>
-          <h3
-            class="text-2xl font-bold text-gray-200 mb-4 text-center group-hover:text-white"
+            <i class='bx bx-calendar-check text-xl'></i>
+            Agendar Consultoria
+          </a>
+          <a
+            href="/caiomori"
+            rel="noopener"
+            class="border-2 border-blue-600 text-blue-400 px-8 py-4 rounded-lg hover:bg-blue-600/20 transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2"
+            aria-label="Sobre Caio Mori"
           >
-            Inovação
-          </h3>
-          <p
-            class="text-gray-600 text-center leading-relaxed transition-colors duration-300 group-hover:text-white"
-          >
-            Soluções únicas e criativas para desafios complexos.
-          </p>
+            <i class='bx bx-user-circle text-xl'></i>
+            Conheça o Fundador
+          </a>
         </div>
 
-        <!-- Recursos -->
-        <div
-          class="feature-card group flex-1 max-w-xs p-8 bg-gray-700/50 hover:bg-gray-700/80 backdrop-blur-lg p-6 rounded-xl border border-gray-600/30 transition-all duration-300 hover:border-blue-400 hover:shadow-2xl hover:-translate-y-2 transform-gpu"
-        >
-          <div
-            class="icon-container mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110"
-          >
-            <i class="bx bx-line-chart text-4xl text-white"></i>
+        <!-- Diferenciais com Microinterações -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div class="feature-card p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="icon-container mb-4 w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <i class='bx bxs-rocket text-3xl text-blue-400'></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Performance</h3>
+            <p class="text-gray-400">Aplicações otimizadas para máxima velocidade e eficiência</p>
           </div>
-          <h3
-            class="text-2xl font-bold text-gray-200 mb-4 text-center group-hover:text-white"
-          >
-            Escalabilidade
-          </h3>
-          <p
-            class="text-gray-600 text-center leading-relaxed transition-colors duration-300 group-hover:text-white"
-          >
-            Plataformas robustas para crescer junto com seu negócio.
-          </p>
+
+          <div class="feature-card p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-purple-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="icon-container mb-4 w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <i class='bx bx-shield-quarter text-3xl text-purple-400'></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Segurança</h3>
+            <p class="text-gray-400">Proteção de dados com padrões internacionais</p>
+          </div>
+
+          <div class="feature-card p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-green-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="icon-container mb-4 w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <i class='bx bx-line-chart text-3xl text-green-400'></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Escalabilidade</h3>
+            <p class="text-gray-400">Crescimento controlado e infraestrutura elástica</p>
+          </div>
+
+          <div class="feature-card p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <div class="icon-container mb-4 w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto">
+              <i class='bx bx-support text-3xl text-cyan-400'></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Suporte 24/7</h3>
+            <p class="text-gray-400">Assistência técnica especializada permanente</p>
+          </div>
         </div>
 
-        <div
-          class="feature-card group flex-1 max-w-xs p-8 bg-gray-700/50 hover:bg-gray-700/80 backdrop-blur-lg p-6 rounded-xl border border-gray-600/30 transition-all duration-300 hover:border-blue-400 hover:shadow-2xl hover:-translate-y-2 transform-gpu"
-        >
-          <div
-            class="icon-container mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110"
-          >
-            <i class="bx bx-support text-4xl text-white"></i>
-          </div>
-          <h3
-            class="text-2xl font-bold text-gray-200 mb-4 text-center group-hover:text-white"
-          >
-            Suporte Dedicado
-          </h3>
-          <p
-            class="text-gray-600 text-center leading-relaxed transition-colors duration-300 group-hover:text-white"
-          >
-            Acompanhamento contínuo e manutenção proativa.
-          </p>
+        <!-- Social Proof -->
+        <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <blockquote class="text-center">
+            <p class="text-2xl text-white italic mb-4">
+              " <span class="text-blue-400 not-italic font-bold">Recomendo fortemente</span> o Caio, para qualquer posição relacionada ao desenvolvimento mobile.
+               Ele possui <span class="text-purple-400 not-italic font-bold">habilidades excepcionais</span> tanto em desenvolvimento híbrido quanto em desenvolvimento nativo com Swift. 
+               Sua <span class="text-blue-400 not-italic font-bold">dedicação</span> e expertise técnica são evidentes em todos os projetos que ele participa... "
+            </p>
+            <a href="https://www.linkedin.com/in/caiomori/details/recommendations" target="_blank" class="text-blue-400 hover:underline">
+            <cite class="text-gray-400 flex items-center justify-center">
+              <i class="bx bxl-linkedin-square text-2xl"></i>
+              Vitor Cimetan, Senior iOS Developer
+            </cite>
+          </a>
+          </blockquote>
         </div>
-
-        <div
-          class="feature-card group flex-1 max-w-xs p-8 bg-gray-700/50 hover:bg-gray-700/80 backdrop-blur-lg p-6 rounded-xl border border-gray-600/30 transition-all duration-300 hover:border-blue-400 hover:shadow-2xl hover:-translate-y-2 transform-gpu"
-        >
-          <div
-            class="icon-container mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mx-auto transition-all duration-300 group-hover:scale-110"
-          >
-            <i class="bx bx-shield-quarter text-4xl text-white"></i>
-          </div>
-          <h3
-            class="text-2xl font-bold text-gray-200 mb-4 text-center group-hover:text-white"
-          >
-            Segurança
-          </h3>
-          <p
-            class="text-gray-600 text-center leading-relaxed transition-colors duration-300 group-hover:text-white"
-          >
-            Proteção de dados e padrões rigorosos de conformidade.
-          </p>
-        </div>
-      </div>
-
-      <div class="testimonials">
-        <blockquote>
-          "A MoriWare otimizou o fluxo de trabalho da nossa equipe, aumentando a
-          eficiência em mais de 30%."
-          <cite>— Maria Silva, Gestora de Projetos</cite>
-        </blockquote>
-      </div>
+      </section>
     </main>
-
     <!-- Projetos -->
     <section
       id="projetos"
@@ -364,7 +339,7 @@
 
             <div class="pt-6">
               <div class="flex items-center justify-between mb-3">
-                <h3 class="text-2xl font-bold text-gray-100">Chef Delivery</h3>
+                <h3 class="text-2xl font-bold text-gray-100">MoriBank</h3>
                 <span class="text-sm text-green-400 flex items-center">
                   <i class="bx bx-devices mr-1"></i> iOS
                 </span>
@@ -372,10 +347,10 @@
 
               <p class="text-gray-300 mb-4 leading-relaxed">
                 <span class="text-lime-400 font-semibold">Aplicativo</span>
-                para delivery de alimentos com:
-                <span class="highlight-text">animações premium</span>,
-                <span class="highlight-text">gestos intuitivos</span>, e
-                <span class="highlight-text">integração de API</span>.
+                redefinido por:  
+                <span class="highlight-text">Server-Driven UI</span>,
+                <span class="highlight-text">atualizado em tempo real</span>, e
+                <span class="highlight-text">performance nativa</span>.
               </p>
 
               <!-- Stack -->
@@ -439,19 +414,23 @@
           Transforme sua visão em realidade digital com soluções de alto
           desempenho
         </p>
-        <div class="flex flex-col md:flex-row justify-center gap-6">
+        <div class="flex flex-col md:flex-row justify-center gap-6 mb-20">
           <a
             href="mailto:caiomori22@gmail.com"
-            class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
+            class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-lg hover:shadow-xl transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2 animate-pulse"
+            aria-label="Agendar Consultoria"
           >
-            📩 Enviar E-mail
+            <i class='bx bx-calendar-check text-xl'></i>
+            Agendar Consultoria
           </a>
           <a
             href="/caiomori"
             rel="noopener"
-            class="border-2 border-blue-600 text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-600/20 transition-colors"
+            class="border-2 border-blue-600 text-blue-400 px-8 py-4 rounded-lg hover:bg-blue-600/20 transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2"
+            aria-label="Sobre Caio Mori"
           >
-            👨‍💻 Conheça Caio Mori
+            <i class='bx bx-user-circle text-xl'></i>
+            Conheça o Fundador
           </a>
         </div>
       </div>
@@ -508,7 +487,7 @@
             "ratingValue": "5",
             "bestRating": "5"
           },
-          "reviewBody": "A MoriWare otimizou o fluxo de trabalho da nossa equipe."
+          "reviewBody": "A MoriWare implementou uma solução que aumentou nossa conversão em 150% em apenas 3 meses"
         }
       }
     </script>
