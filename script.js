@@ -12,6 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach((element) => observer.observe(element));
   };
 
+  window.addEventListener('scroll', function () {
+    dataLayer.push({
+      event: 'scroll',
+      scrollPercent: Math.round(
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+          100,
+      ),
+    });
+  });
+
+  window.addEventListener('gtm.load', function (event) {
+    console.log('Container Loaded:', event.detail.containerId);
+  });
+
   const activateElement = (element) => {
     element.classList.add('active');
   };

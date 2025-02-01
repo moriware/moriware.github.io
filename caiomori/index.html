@@ -84,6 +84,10 @@
 
     <!-- SEO Avançado -->
     <link rel="canonical" href="https://www.moriware.dev" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' https://www.googletagmanager.com https://ssl.google-analytics.com 'unsafe-inline' 'unsafe-eval';"
+    />
   </head>
 
   <body class="bg-gray-900 text-gray-100 font-['Open_Sans']">
@@ -154,6 +158,7 @@
           </p>
           <a
             href="https://linkedin.com/in/caiomori"
+            onclick="dataLayer.push({'event': 'linkedin'});"
             target="_blank"
             rel="noopener"
             class="text-blue-400 hover:text-blue-300 transition-colors"
@@ -164,6 +169,7 @@
             </p>
           </a>
           <a
+            onclick="dataLayer.push({'event': 'github'});"
             href="https://github.com/caioMori"
             target="_blank"
             rel="noopener"
@@ -702,6 +708,7 @@
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-6 mb-20">
           <a
+            onclick="dataLayer.push({'event': 'agendar_consultoria'});"
             href="mailto:caiomori22@gmail.com"
             class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-lg hover:shadow-xl transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2 animate-pulse"
             aria-label="Agendar Consultoria"
@@ -722,6 +729,7 @@
         </p>
         <div class="flex justify-center space-x-6">
           <a
+            onclick="dataLayer.push({'event': 'linkedin'});"
             href="https://linkedin.com/in/CaioMori"
             target="_blank"
             rel="noopener"
@@ -730,6 +738,7 @@
             <i class="bx bxl-linkedin-square text-2xl"></i>
           </a>
           <a
+            onclick="dataLayer.push({'event': 'github'});"
             href="https://github.com/CaioMori"
             target="_blank"
             rel="noopener"
