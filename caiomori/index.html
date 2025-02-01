@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KC4V73XS');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -33,6 +47,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Open+Sans:wght@400;600;700&display=swap"
+      as="style"
+    />
+
+    <!-- Open Graph Image -->
+    <meta
+      property="og:image"
+      content="https://moriware.dev/assets/banner.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Fontes -->
     <link
@@ -74,6 +101,16 @@
   </head>
 
   <body class="bg-gray-900 text-gray-100 font-['Open_Sans']">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KC4V73XS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Cabeçalho -->
     <header
       class="bg-gray-800/95 backdrop-blur-sm py-4 fixed w-full top-0 z-50 shadow-xl"
@@ -83,7 +120,7 @@
       >
         <a href="/" class="hover:opacity-80 transition-opacity">
           <img
-            src="../assets/logo-name.svg"
+            src="../assets/logo-name.webp"
             alt="MoriWare - Desenvolvimento de Software"
             class="h-10 w-auto"
             width="180"
@@ -264,7 +301,9 @@
             >
               <i class="bx bxl-microsoft text-3xl text-white"></i>
             </div>
-            <h3 class="text-lg font-semibold text-center text-gray-100">Azure</h3>
+            <h3 class="text-lg font-semibold text-center text-gray-100">
+              Azure
+            </h3>
             <span
               class="absolute top-2 right-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"
               >☁</span
@@ -681,10 +720,9 @@
             class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-lg hover:shadow-xl transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2 animate-pulse"
             aria-label="Agendar Consultoria"
           >
-            <i class='bx bx-calendar-check text-xl'></i>
+            <i class="bx bx-calendar-check text-xl"></i>
             Agendar Consultoria
           </a>
-          
         </div>
       </div>
     </section>
