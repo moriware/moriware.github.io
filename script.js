@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const initCurrentYear = () => {
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  };
-
   const createObserver = (elements, callback, options = { threshold: 0.2 }) => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -27,14 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const projetos = document.querySelectorAll('.projeto');
     if (projetos.length > 0) {
       createObserver(projetos, activateElement);
-    }
-  };
-
-  const initFeatureAnimations = () => {
-    const features = document.querySelectorAll('.parallax-features .feature');
-    if (features.length > 0) {
-      features.forEach((feature) => feature.classList.add('hidden'));
-      createObserver(features, activateElement);
     }
   };
 
@@ -63,55 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const initContactButtonScroll = () => {
-    const contactButton = document.getElementById('contactButton');
-    if (contactButton) {
-      contactButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        scrollToPosition(document.body.scrollHeight);
-      });
-    }
-  };
-
-  // Função para abrir o modal
-  const openModal = (videoSrc) => {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    modalVideo.src = videoSrc;
-    modal.classList.add('active');
-  };
-
-  // Função para fechar o modal
-  const closeModal = () => {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    modal.classList.remove('active');
-    modalVideo.src = '';
-  };
-
-  // Adicionar eventos aos botões de play
-  const initPlayButtons = () => {
-    const playButtons = document.querySelectorAll('.play-button');
-    playButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const videoSrc = button.getAttribute('data-video');
-        openModal(videoSrc);
-      });
-    });
-  };
-
-  // Evento para fechar o modal
-  const initModalClose = () => {
-    const closeBtn = document.getElementById('modalClose');
-    closeBtn.addEventListener('click', closeModal);
-    const modal = document.getElementById('videoModal');
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-  };
-
   const initGitHubButtons = () => {
     const gitHubButtons = document.querySelectorAll('.button-primary');
     gitHubButtons.forEach((button) => {
@@ -121,14 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  initCurrentYear();
   initProjectAnimations();
-  initFeatureAnimations();
   initTestimonialAnimation();
   initLogoScroll();
-  initContactButtonScroll();
-  initPlayButtons();
-  initModalClose();
   initGitHubButtons();
 });
 
