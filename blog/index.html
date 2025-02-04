@@ -1,3 +1,114 @@
+<!-- ### Como Usar o DeepSeek R1 Gratuitamente no Visual Studio Code com Cline ou Roo Code  
+
+#### 🚀 Inteligência Artificial | VSCode | Programação | DeepSeek R1  
+
+Se você está procurando uma IA que se destaca em raciocínio e, além disso, é gratuita por ser de código aberto, o recém-lançado **DeepSeek R1** é uma excelente escolha. Ele concorre e até supera modelos como **GPT-4, o1-mini, Claude 3.5**, entre outros. Testei e só tenho elogios!  
+
+Se você deseja rodá-lo diretamente no **Visual Studio Code** como um agente de código semelhante ao **GitHub Copilot**, sem gastar nada, acompanhe este guia para configurá-lo utilizando ferramentas como **LM Studio, Ollama e Jan**.  
+
+---
+
+## 🌟 Por que o DeepSeek R1 está sendo tão comentado?  
+
+✅ **Gratuito e Open Source** – Diferente de muitos modelos pagos, você pode usá-lo sem custos. Está até disponível para chat em [https://chat.deepseek.com](https://chat.deepseek.com).  
+✅ **Alto desempenho** – Ele compete e supera outros modelos em tarefas que envolvem lógica, matemática e geração de código (minha parte favorita).  
+✅ **Múltiplas versões** – Para rodá-lo localmente (LLM), há modelos de **1.5B a 70B parâmetros**, permitindo escolher o que melhor se adapta ao seu hardware.  
+✅ **Fácil de integrar** – Pode ser conectado ao VSCode através de extensões como **Cline** ou **Roo Code**.  
+✅ **Sem custos** – Rodando localmente, você **não paga por tokens ou APIs**. Recomenda-se uma **GPU**, pois executar apenas na **CPU** pode ser mais lento.  
+
+---
+
+## 🔥 Dicas Importantes Antes de Começar  
+
+🔹 **Economize recursos** – Se seu PC não for potente, use modelos menores (1.5B ou 7B parâmetros) ou versões quantizadas.  
+🔹 **Calculadora de RAM** – Use **LLM Calc** para saber a memória mínima necessária.  
+🔹 **Privacidade** – Rodando localmente, seus dados **ficam no seu PC** e não vão para servidores externos.  
+🔹 **Custo zero** – Rodar localmente é grátis, mas se quiser usar a **API do DeepSeek**, há um custo por tokens. A boa notícia é que os preços são mais baixos que os concorrentes.  
+
+---
+
+## 🖥️ Qual Modelo Escolher? Depende do Seu PC!  
+
+| Modelo | RAM Requerida | GPU Recomendada | Indicado Para |
+|--------|-------------|----------------|---------------|
+| **1.5B Parâmetros** | ~4 GB | Integrada (NVIDIA GTX 1050 ou CPU moderna) | Tarefas simples, PCs modestos |
+| **7B Parâmetros** | ~8-10 GB | Dedicada (NVIDIA GTX 1660 ou melhor) | Tarefas intermediárias, hardware melhor |
+| **70B Parâmetros** | ~40 GB | High-end (NVIDIA RTX 3090 ou superior) | Tarefas complexas, PCs superpotentes |
+
+---
+
+## ⚡ Como Rodar o DeepSeek R1 Localmente  
+
+### 1️⃣ Usando o **LM Studio**  
+
+1. **Baixe e instale o LM Studio** – Acesse o site do **LM Studio** e faça o download da versão para seu sistema.  
+2. **Baixe o modelo DeepSeek R1** – No LM Studio, vá na aba **Discover**, pesquise por **"DeepSeek R1"**, e selecione a versão compatível com seu hardware.  
+   - Para **MacBooks** com **processadores Apple**, mantenha a opção **MLX** ativada (versões otimizadas para Apple).  
+   - Para **Windows/Linux**, escolha a opção **GGUF**.  
+3. **Carregue o modelo** – Após o download, vá em **Local Models**, selecione o **DeepSeek R1** e clique em **Load**.  
+4. **Inicie o servidor local** – Na aba **Developer**, ative a opção **Start Server**. O modelo será executado em `http://localhost:1234`.  
+5. **Siga para a integração com VSCode!**  
+
+---
+
+### 2️⃣ Usando o **Ollama**  
+
+1. **Instale o Ollama** – Faça o download no site oficial e instale-o.  
+2. **Baixe o modelo** – No terminal, execute:  
+   ```sh
+   ollama pull deepseek-r1
+   ```  
+   - Para modelos menores, confira [a biblioteca do Ollama](https://ollama.com/library/deepseek-r1) e use o comando correspondente.  
+3. **Inicie o servidor** – No terminal, execute:  
+   ```sh
+   ollama serve
+   ```  
+   - O modelo rodará em `http://localhost:11434`.  
+4. **Siga para a integração com VSCode!**  
+
+---
+
+### 3️⃣ Usando o **Jan**  
+
+1. **Baixe e instale o Jan** – Escolha a versão para seu sistema no site do **Jan**.  
+2. **Baixe o modelo** – Como não encontrei o **DeepSeek R1** diretamente no Jan, fui até o **Hugging Face** e pesquisei por **"unsloth gguf deepseek r1"**.  
+   - Encontrei a versão desejada, cliquei em **"Use this model"** e selecionei **Jan** como opção. O modelo abriu automaticamente no Jan e depois fiz o download.  
+3. **Carregue o modelo** – Após o download, selecione-o no **Jan** e clique em **Load**.  
+4. **Inicie o servidor** – O Jan iniciará automaticamente em `http://localhost:1337`.  
+5. **Siga para a integração com VSCode!**  
+
+---
+
+## 🛠️ Como Integrar com o VSCode  
+
+### 🔹 Usando **Cline** ou **Roo Code** com LM Studio ou Jan  
+
+1. No VSCode, abra a aba **Extensões** e instale **Cline** ou **Roo Code**.  
+2. Acesse as **Configurações** da extensão.  
+3. Em **API Provider**, selecione **"LM Studio"**.  
+4. No campo **Base URL**, insira a URL configurada no LM Studio ou Jan.  
+5. O campo **Model ID** será preenchido automaticamente se houver apenas um modelo. Caso contrário, selecione o **DeepSeek R1** manualmente.  
+6. Clique em **"Done"**.  
+
+---
+
+### 🔹 Usando **Cline** ou **Roo Code** com **Ollama**  
+
+1. No VSCode, abra a aba **Extensões** e instale **Cline** ou **Roo Code**.  
+2. Acesse as **Configurações** da extensão.  
+3. Em **API Provider**, selecione **"Ollama"**.  
+4. No campo **Base URL**, insira `http://localhost:11434`.  
+5. O campo **Model ID** será preenchido automaticamente se houver apenas um modelo. Caso contrário, selecione o **DeepSeek R1** manualmente.  
+6. Clique em **"Done"**.  
+
+---
+
+## ✅ Conclusão  
+
+O **DeepSeek R1** é uma solução incrível para quem quer uma IA poderosa **sem gastar nada**. Com **LM Studio, Ollama ou Jan**, você pode rodá-lo localmente e integrá-lo diretamente ao **Visual Studio Code**.  
+
+Escolha o modelo que se encaixa no seu PC e **comece a usar hoje mesmo!** 🚀 -->
+
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
@@ -5,14 +116,14 @@
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
+          dl = l != "dataLayer" ? "&l=" + l : "";
         j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-KC4V73XS');
+      })(window, document, "script", "dataLayer", "GTM-KC4V73XS");
     </script>
     <!-- End Google Tag Manager -->
     <!-- Meta Tags SEO Avançadas -->
@@ -64,7 +175,7 @@
     <meta property="og:updated_time" content="2025-02-04T12:00:00Z" />
     <meta
       property="og:image"
-      content="https://moriware.dev/assets/banner.jpg"
+      content="https://moriware.dev/assets/deepseek-banner.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -124,7 +235,7 @@
     <!-- Artigo -->
     <main
       id="home"
-      class="pt-32 pb-16 container mx-auto px-4 lg:px-8 section-anchor"
+      class="pt-16 pb-16 container mx-auto px-4 lg:px-8 section-anchor"
     >
       <article
         itemscope
@@ -132,6 +243,13 @@
         class="prose lg:prose-xl px-4 py-8 max-w-3xl mx-auto"
       >
         <header class="mb-8 gap-4">
+          <img
+            src="../assets/deepseek-banner.jpg"
+            alt="DeepSeek R1 - Transforme seu VS Code"
+            class="w-full h-auto rounded-lg mb-4"
+            width="1200"
+            height="630"
+          />
           <h1 itemprop="headline" class="mb-4 text-4xl font-semibold">
             Como utilizar DeepSeek Grátis em seu VSCode
           </h1>
@@ -277,26 +395,181 @@
           </h2>
           <div class="overflow-x-auto mt-4">
             <h3 class="text-xl font-semibold mb-2">1. Utilizando LM Studio</h3>
-            <p class="mb-4">
-              <strong>Baixe e instale o LM Studio</strong> – Acesse o site do
-              <a
-                class="text-blue-400 highlight-text"
-                target="_blank"
-                href="https://lmstudio.ai"
-              >
-                LM Studio</a
-              >
-              e faça o download da versão para seu sistema.
-            </p>
+            <div class="px-4">
+              <p>
+                <strong>1. Baixe e instale o LM Studio</strong> – Acesse o site
+                do
+                <a
+                  class="text-blue-400 highlight-text"
+                  target="_blank"
+                  href="https://lmstudio.ai"
+                >
+                  LM Studio</a
+                >
+                e faça o download da versão para seu sistema.
+              </p>
+              <p class="mt-2">
+                <strong>2. Baixe o modelo DeepSeek R1 </strong> - No LM Studio,
+                vá na aba Discover, pesquise por "DeepSeek R1", e selecione a
+                versão compatível com seu hardware.
+              </p>
+              <div class="bg-gray-800/50 px-4 py-3">
+                <em class="block mb-2">
+                  - Para MacBooks com processadores Apple, mantenha a opção MLX
+                  ativada.
+                </em>
+                <em class="block">
+                  - Para Windows/Linux, escolha a opção GGUF.
+                </em>
+              </div>
+              <p class="mt-2">
+                <strong>3. Carregue o modelo</strong> – Após o download, vá em
+                Local Models, selecione o DeepSeek R1 e clique em Load.
+              </p>
+              <p class="mt-2">
+                <strong>4. Inicie o servidor local</strong> – Na aba Developer,
+                ative a opção Start Server. O modelo será executado em
+                <code>http://localhost:1234</code>.
+              </p>
+              <p class="mt-2">
+                <strong>5. Siga para a integração com VSCode!</strong>
+              </p>
+            </div>
           </div>
-          <p class="mt-4">
-            <em>Dica:</em> Utilize o
-            <a href="https://llmcalc.com" target="_blank" rel="noopener"
-              >LLM Calc</a
-            >
-            para calcular exatamente o que seu PC aguenta!
+
+          <div class="overflow-x-auto mt-8">
+            <h3 class="text-xl font-semibold mb-2">1. Utilizando o Ollama</h3>
+            <div class="px-4">
+              <p>
+                <strong>1. Instale o Ollama</strong> – Acesse o site do
+                <a
+                  class="text-blue-400 highlight-text"
+                  target="_blank"
+                  href="https://ollama.com"
+                >
+                  Ollama</a
+                >
+                e faça o download da versão para seu sistema.
+              </p>
+              <p class="mt-4">
+                <strong>2. Baixe o modelo DeepSeek R1 </strong> - No terminal,
+                execute:
+              </p>
+              <div class="bg-gray-800/50 px-4 py-3">
+                <code class="block"> ollama pull deepseek-r1 </code>
+              </div>
+              <em>
+                Para modelos menores, confira a
+                <a
+                  class="text-blue-400 highlight-text"
+                  target="_blank"
+                  href="https://ollama.com/library/deepseek-r1"
+                >
+                  biblioteca do Ollama</a
+                >
+                e faça o download da versão para seu sistema. e use o comando
+                correspondente.
+              </em>
+              <p class="mt-4">
+                <strong>3. Inicie o servidor</strong> – No terminal, execute:
+              </p>
+              <div class="bg-gray-800/50 px-4 py-3">
+                <code class="block"> ollama serve </code>
+              </div>
+              <em> O modelo rodará em http://localhost:11434 </em>
+              <p class="mt-4">
+                <strong>4. Siga para a integração com VSCode!</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="como-integrar-vscode" class="mb-8">
+          <h2 itemprop="about" class="text-2xl font-semibold mb-4">
+            Como Integrar com o VSCode
+            <small class="block text-base font-normal text-gray-400">
+              A Mágica Acontece Aqui!
+            </small>
+          </h2>
+          <div class="overflow-x-auto mt-4">
+            <h3 class="text-xl font-semibold mb-2">
+              Usando Cline ou Roo Code com LM Studio ou Jan
+            </h3>
+            <div class="px-4">
+              <p>
+                <strong>1. No VSCode</strong>, abra a aba Extensões e instale
+                Cline ou Roo Code.
+              </p>
+              <p class="mt-2">
+                <strong>2. Acesse as Configurações</strong> da extensão.
+              </p>
+              <p class="mt-2">
+                <strong>3. Em API Provider</strong>, selecione "LM Studio".
+              </p>
+              <p class="mt-2">
+                <strong>4. No campo Base URL</strong>, insira a URL configurada
+                no LM Studio ou Jan.
+              </p>
+              <p class="mt-2">
+                <strong>5. O campo Model ID</strong> será preenchido
+                automaticamente se houver apenas um modelo. Caso contrário,
+                selecione o DeepSeek R1 manualmente.
+              </p>
+              <p class="mt-2">
+                <strong>6. Clique em "Done".</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto mt-8">
+            <h3 class="text-xl font-semibold mb-2">
+              Usando Cline ou Roo Code com Ollama
+            </h3>
+            <div class="px-4">
+              <p>
+                <strong>1. No VSCode</strong>, abra a aba Extensões e instale
+                Cline ou Roo Code.
+              </p>
+              <p class="mt-2">
+                <strong>2. Acesse as Configurações</strong> da extensão.
+              </p>
+              <p class="mt-2">
+                <strong>3. Em API Provider</strong>, selecione "Ollama".
+              </p>
+              <p class="mt-2">
+                <strong>4. No campo Base URL</strong>, insira
+                <code>http://localhost:11434</code>.
+              </p>
+              <p class="mt-2">
+                <strong>5. O campo Model ID</strong> será preenchido
+                automaticamente se houver apenas um modelo. Caso contrário,
+                selecione o DeepSeek R1 manualmente.
+              </p>
+              <p class="mt-2">
+                <strong>6. Clique em "Done".</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="conclusao" class="mb-8">
+          <h2 itemprop="about" class="text-2xl font-semibold mb-4">
+            Conclusão
+            <small class="block text-base font-normal text-gray-400">
+              Hora de Colocar a Mão na Massa!
+            </small>
+          </h2>
+          <p>
+            O DeepSeek R1 é uma solução incrível para quem quer uma IA poderosa
+            sem gastar nada. Com LM Studio, Ollama ou Jan, você pode rodá-lo
+            localmente e integrá-lo diretamente ao Visual Studio Code.
+          </p>
+          <p>
+            Escolha o modelo que se encaixa no seu PC e
+            <strong>comece a usar hoje mesmo!</strong>
           </p>
         </section>
+
       </article>
     </main>
 
@@ -331,17 +604,17 @@
     </footer>
 
     <script>
-      document.getElementById('currentYear').textContent =
+      document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
+          const target = document.querySelector(this.getAttribute("href"));
           if (target) {
             target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
+              behavior: "smooth",
+              block: "start",
             });
           }
         });
