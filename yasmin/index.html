@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yasmin ❤️</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      body {
+        background: linear-gradient(135deg, #ffb6c1 0%, #ffe4e1 100%);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #a8325c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      h1 {
+        margin-top: 40px;
+        font-size: 2.5em;
+        text-shadow: 0 2px 8px #fff;
+      }
+      .progress-container {
+        margin: 40px 0;
+        width: 90%;
+        max-width: 500px;
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+        padding: 30px;
+        text-align: center;
+      }
+      .progress-bar {
+        width: 100%;
+        height: 30px;
+        background: #ffe4e1;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .progress {
+        height: 100%;
+        background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%);
+        border-radius: 15px;
+        transition: width 1s;
+      }
+      .days {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      .love {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: #d72660;
+        text-shadow: 0 2px 8px #fff;
+      }
+      .heart {
+        font-size: 3em;
+        animation: pulse 1.2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .audio-player {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contagem para o nosso Encontro</h1>
+    <canvas
+      id="heart-canvas"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 9999;
+        background: transparent;
+      "
+    ></canvas>
+    <div style="margin: 18px 0 0 0; display: flex; justify-content: center">
+      <img
+        src="../assets/rosa.png"
+        alt="Rosa romântica"
+        style="
+          max-width: 220px;
+          width: 100%;
+          border-radius: 18px;
+          box-shadow: 0 2px 8px rgba(255, 182, 193, 0.15);
+        "
+      />
+    </div>
+    <div class="progress-container">
+      <div class="days" id="days"></div>
+      <div class="progress-bar" style="position: relative; background: #ffe4e1">
+        <div
+          class="progress"
+          id="progress"
+          style="background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%)"
+        ></div>
+        <span id="heart-indicator"></span>
+      </div>
+      <div class="love">
+        Cada dia mais perto de você! <span class="heart">❤️</span>
+      </div>
+    </div>
+    <div class="audio-player">
+      <audio id="romantic-audio" controls autoplay loop>
+        <source src="../assets/musica.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o áudio.
+      </audio>
+    </div>
+    <script>
+      // Data de hoje e data do encontro
+      const hoje = new Date();
+      const encontro = new Date('2026-02-12T00:00:00');
+      const inicio = new Date('2026-02-01T00:00:00');
+      // Dias totais e dias restantes
+      const diasTotais = Math.ceil((encontro - inicio) / (1000 * 60 * 60 * 24));
+      const diasRestantes = Math.max(
+        0,
+        Math.ceil((encontro - hoje) / (1000 * 60 * 60 * 24)),
+      );
+      // Progresso
+      const progresso = 100 - (diasRestantes / diasTotais) * 100;
+      document.getElementById('days').innerHTML =
+        diasRestantes === 0
+          ? 'Hoje é o grande dia! 💖'
+          : `Faltam <b>${diasRestantes}</b> dias para te ver!`;
+      document.getElementById('progress').style.width = progresso + '%';
+
+      // Indicador de coração na barra
+      const barra = document.querySelector('.progress-bar');
+      const heart = document.getElementById('heart-indicator');
+      // Estilo redondo fixo
+      heart.style.position = 'absolute';
+      heart.style.top = '50%';
+      heart.style.transform = 'translateY(-50%)';
+      heart.style.width = '32px';
+      heart.style.height = '32px';
+      heart.style.background = '#fff';
+      heart.style.borderRadius = '50%';
+      heart.style.display = 'flex';
+      heart.style.alignItems = 'center';
+      heart.style.justifyContent = 'center';
+      heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
+      heart.style.fontSize = '1.2em';
+      heart.style.transition = 'left 1s, background 0.3s';
+      heart.innerHTML = '❤️';
+      // Posição do coração proporcional ao progresso
+      heart.style.left = `calc(${progresso}% - 16px)`;
+
+      // Partículas de coração
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('heart-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let hearts = [];
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        function createHeart() {
+          const size = Math.random() * 24 + 16;
+          hearts.push({
+            x: Math.random() * canvas.width,
+            y: -size,
+            size,
+            speed: Math.random() * 1.5 + 1,
+            opacity: Math.random() * 0.5 + 0.5,
+            angle: Math.random() * Math.PI * 2,
+            spin: (Math.random() - 0.5) * 0.04,
+          });
+        }
+        function drawHeart(x, y, size, angle, opacity) {
+          ctx.save();
+          ctx.translate(x, y);
+          ctx.rotate(angle);
+          ctx.globalAlpha = opacity;
+          ctx.beginPath();
+          ctx.moveTo(0, size * 0.3);
+          ctx.bezierCurveTo(size * 0.5, -size * 0.3, size, size * 0.5, 0, size);
+          ctx.bezierCurveTo(
+            -size,
+            size * 0.5,
+            -size * 0.5,
+            -size * 0.3,
+            0,
+            size * 0.3,
+          );
+          ctx.fillStyle = '#ff69b4';
+          ctx.shadowColor = '#ffb6c1';
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          ctx.restore();
+        }
+        function animateHearts() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          hearts.forEach((h) => {
+            h.y += h.speed;
+            h.angle += h.spin;
+            drawHeart(h.x, h.y, h.size, h.angle, h.opacity);
+          });
+          hearts = hearts.filter((h) => h.y < canvas.height + h.size);
+          if (hearts.length < 40 && Math.random() < 0.3) createHeart();
+          requestAnimationFrame(animateHearts);
+        }
+        animateHearts();
+      });
+      heart.style.top = '50%';
+      heart.style.transform = 'translateY(-50%)';
+      heart.style.width = '32px';
+      heart.style.height = '32px';
+      heart.style.background = '#fff';
+      heart.style.borderRadius = '50%';
+      heart.style.display = 'flex';
+      heart.style.alignItems = 'center';
+      heart.style.justifyContent = 'center';
+      heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
+      heart.style.fontSize = '1.2em';
+      heart.style.transition = 'left 1s, background 0.3s';
+      heart.innerHTML = '❤️';
+      // Posição do coração proporcional ao progresso
+      heart.style.left = `calc(${progresso}% - 16px)`;
+      // Tentar iniciar a música automaticamente
+      window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('romantic-audio');
+        if (audio) {
+          // Tenta tocar imediatamente
+          const playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Caso bloqueado, tenta novamente ao interagir
+              document.body.addEventListener(
+                'click',
+                () => {
+                  audio.play();
+                },
+                { once: true },
+              );
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
