@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -11,11 +11,70 @@
         background: linear-gradient(135deg, #ffb6c1 0%, #ffe4e1 100%);
         font-family: 'Segoe UI', Arial, sans-serif;
         color: #a8325c;
+        min-height: 100vh;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh;
-        margin: 0;
+        justify-content: center;
+      }
+      #contador-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        margin-top: 0;
+      }
+      #contador-container h1 {
+        text-align: center;
+        margin-top: 40px;
+      }
+      #contador-container img {
+        margin: 18px 0 0 0;
+        display: block;
+      }
+      .progress-container {
+        margin: 40px 0 0 0;
+        width: 90%;
+        max-width: 500px;
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+        padding: 30px;
+        text-align: center;
+        align-self: center;
+      }
+      @media (max-width: 600px) {
+        #contador-container {
+          width: 100vw;
+        }
+        .progress-container {
+          margin: 24px 0 0 0;
+          padding: 16px !important;
+        }
+        #contador-container img {
+          max-width: 120px !important;
+        }
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.5em !important;
+          margin-top: 24px !important;
+        }
+        .progress-container {
+          padding: 16px !important;
+        }
+        #contador-container img {
+          max-width: 120px !important;
+        }
+        #especial-container h1 {
+          font-size: 2.2em !important;
+          margin-top: 32px !important;
+        }
+        #especial-container > div {
+          font-size: 1em !important;
+        }
       }
       h1 {
         margin-top: 40px;
@@ -71,13 +130,19 @@
           transform: scale(1);
         }
       }
-      .audio-player {
-        margin-top: 30px;
-      }
     </style>
   </head>
   <body>
-    <h1>Contagem para o nosso Encontro</h1>
+    <audio
+      id="romantic-audio"
+      autoplay
+      loop
+      preload="auto"
+      style="display: none"
+    >
+      <source src="../assets/musica.mp3" type="audio/mpeg" />
+      Seu navegador não suporta o áudio.
+    </audio>
     <canvas
       id="heart-canvas"
       style="
@@ -89,108 +154,173 @@
         pointer-events: none;
         z-index: 9999;
         background: transparent;
+        display: none;
       "
     ></canvas>
-    <div style="margin: 18px 0 0 0; display: flex; justify-content: center">
-      <img
-        src="../assets/rosa.png"
-        alt="Rosa romântica"
+    <div id="contador-container" style="margin-top: 40px">
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <h1>À espera do nosso encontro</h1>
+        <img
+          src="../assets/rosa.png"
+          alt="Rosa romântica"
+          style="
+            max-width: 220px;
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.15);
+            margin: 18px 0 0 0;
+          "
+        />
+      </div>
+      <div class="progress-container">
+        <div class="days" id="days"></div>
+        <div
+          class="progress-bar"
+          style="position: relative; background: #ffe4e1"
+        >
+          <div
+            class="progress"
+            id="progress"
+            style="background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%)"
+          ></div>
+          <span id="heart-indicator"></span>
+        </div>
+        <div class="love">
+          Cada amanhecer nos aproxima. <span class="heart">❤️</span>
+        </div>
+      </div>
+    </div>
+    <div
+      id="especial-container"
+      style="
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+      "
+    >
+      <h1
         style="
-          max-width: 220px;
-          width: 100%;
-          border-radius: 18px;
-          box-shadow: 0 2px 8px rgba(255, 182, 193, 0.15);
+          font-size: 5em;
+          color: #d72660;
+          margin-top: 120px;
+          text-shadow:
+            0 4px 32px #fff,
+            0 2px 8px #ffb6c1;
+          font-weight: bold;
+          letter-spacing: 0.08em;
+          text-align: center;
+        "
+      >
+        Chegou o nosso capítulo favorito
+      </h1>
+      <img
+        src="../assets/comemorar.gif"
+        alt="Abraço comemorativo"
+        style="
+          max-width: 420px;
+          width: 90%;
+          border-radius: 24px;
+          margin-top: 36px;
+          box-shadow: 0 4px 16px rgba(255, 182, 193, 0.25);
         "
       />
-    </div>
-    <div class="progress-container">
-      <div class="days" id="days"></div>
-      <div class="progress-bar" style="position: relative; background: #ffe4e1">
-        <div
-          class="progress"
-          id="progress"
-          style="background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%)"
-        ></div>
-        <span id="heart-indicator"></span>
+      <div
+        style="
+          font-size: 2em;
+          color: #a8325c;
+          margin-top: 32px;
+          text-align: center;
+          max-width: 700px;
+          text-shadow: 0 2px 8px #fff;
+        "
+      >
+        O dia tão esperado chegou, e entre as névoas, encontrei a doçura da tua
+        alma, sendo mais rara que uma flor de pitaya. ❤️
       </div>
-      <div class="love">
-        Cada dia mais perto de você! <span class="heart">❤️</span>
-      </div>
-    </div>
-    <div class="audio-player">
-      <audio id="romantic-audio" controls autoplay loop>
-        <source src="../assets/musica.mp3" type="audio/mpeg" />
-        Seu navegador não suporta o áudio.
-      </audio>
     </div>
     <script>
-      // Data de hoje e data do encontro
-      const hoje = new Date();
-      const encontro = new Date('2026-02-12T00:00:00');
-      const inicio = new Date('2026-02-01T00:00:00');
-      // Dias totais e dias restantes
-      const diasTotais = Math.ceil((encontro - inicio) / (1000 * 60 * 60 * 24));
-      const diasRestantes = Math.max(
-        0,
-        Math.ceil((encontro - hoje) / (1000 * 60 * 60 * 24)),
-      );
-      // Progresso
-      const progresso = 100 - (diasRestantes / diasTotais) * 100;
-      document.getElementById('days').innerHTML =
-        diasRestantes === 0
-          ? 'Hoje é o grande dia! 💖'
-          : `Faltam <b>${diasRestantes}</b> dias para te ver!`;
-      document.getElementById('progress').style.width = progresso + '%';
+      // Contador e efeito especial
+      function mostrarEspecial() {
+        document.getElementById('contador-container').style.display = 'none';
+        document.getElementById('especial-container').style.display = 'flex';
+        document.getElementById('heart-canvas').style.display = 'block';
+        iniciarEfeitoEspecial();
+      }
 
-      // Indicador de coração na barra
-      const barra = document.querySelector('.progress-bar');
-      const heart = document.getElementById('heart-indicator');
-      // Estilo redondo fixo
-      heart.style.position = 'absolute';
-      heart.style.top = '50%';
-      heart.style.transform = 'translateY(-50%)';
-      heart.style.width = '32px';
-      heart.style.height = '32px';
-      heart.style.background = '#fff';
-      heart.style.borderRadius = '50%';
-      heart.style.display = 'flex';
-      heart.style.alignItems = 'center';
-      heart.style.justifyContent = 'center';
-      heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
-      heart.style.fontSize = '1.2em';
-      heart.style.transition = 'left 1s, background 0.3s';
-      heart.innerHTML = '❤️';
-      // Posição do coração proporcional ao progresso
-      heart.style.left = `calc(${progresso}% - 16px)`;
+      // Contador antigo
+      function atualizarContador() {
+        const hoje = new Date();
+        const encontro = new Date('2026-02-12T00:00:00');
+        const inicio = new Date('2026-02-01T00:00:00');
+        const diasTotais = Math.ceil(
+          (encontro - inicio) / (1000 * 60 * 60 * 24),
+        );
+        const diasRestantes = Math.max(
+          0,
+          Math.ceil((encontro - hoje) / (1000 * 60 * 60 * 24)),
+        );
+        const progresso = 100 - (diasRestantes / diasTotais) * 100;
+        document.getElementById('days').innerHTML =
+          diasRestantes === 0
+            ? 'Hoje é o grande dia, como o clímax do nosso romance! 💖'
+            : `Falta <b>${diasRestantes}</b> dia para te abraçar, ansioso como quem folheia páginas rumo a um final feliz.`;
+        document.getElementById('progress').style.width = progresso + '%';
+        // Indicador de coração na barra
+        const barra = document.querySelector('.progress-bar');
+        const heart = document.getElementById('heart-indicator');
+        heart.style.position = 'absolute';
+        heart.style.top = '50%';
+        heart.style.transform = 'translateY(-50%)';
+        heart.style.width = '32px';
+        heart.style.height = '32px';
+        heart.style.background = '#fff';
+        heart.style.borderRadius = '50%';
+        heart.style.display = 'flex';
+        heart.style.alignItems = 'center';
+        heart.style.justifyContent = 'center';
+        heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
+        heart.style.fontSize = '1.2em';
+        heart.style.transition = 'left 1s, background 0.3s';
+        heart.innerHTML = '❤️';
+        heart.style.left = `calc(${progresso}% - 16px)`;
+        // Se chegou o dia, mostra especial
+        if (diasRestantes === 0) mostrarEspecial();
+      }
+      atualizarContador();
 
-      // Partículas de coração
-      window.addEventListener('DOMContentLoaded', () => {
+      // Chuva de corações na tela de contagem
+      function iniciarChuvaContador() {
         const canvas = document.getElementById('heart-canvas');
-        if (!canvas) return;
+        canvas.style.display = 'block';
         const ctx = canvas.getContext('2d');
-        let hearts = [];
+        let rainHearts = [];
+        const MAX_RAIN = 40;
         function resizeCanvas() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-        function createHeart() {
-          const size = Math.random() * 24 + 16;
-          hearts.push({
+        function createRainHeart() {
+          if (rainHearts.length >= MAX_RAIN) return;
+          const size = Math.random() * 18 + 12;
+          rainHearts.push({
             x: Math.random() * canvas.width,
             y: -size,
             size,
-            speed: Math.random() * 1.5 + 1,
+            vy: Math.random() * 2.5 + 1.5,
             opacity: Math.random() * 0.5 + 0.5,
-            angle: Math.random() * Math.PI * 2,
+            rotation: Math.random() * Math.PI * 2,
             spin: (Math.random() - 0.5) * 0.04,
           });
         }
-        function drawHeart(x, y, size, angle, opacity) {
+        function drawHeart(x, y, size, rotation, opacity) {
           ctx.save();
           ctx.translate(x, y);
-          ctx.rotate(angle);
+          ctx.rotate(rotation);
           ctx.globalAlpha = opacity;
           ctx.beginPath();
           ctx.moveTo(0, size * 0.3);
@@ -211,41 +341,141 @@
         }
         function animateHearts() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          hearts.forEach((h) => {
-            h.y += h.speed;
-            h.angle += h.spin;
-            drawHeart(h.x, h.y, h.size, h.angle, h.opacity);
-          });
-          hearts = hearts.filter((h) => h.y < canvas.height + h.size);
-          if (hearts.length < 40 && Math.random() < 0.3) createHeart();
+          for (let i = 0; i < rainHearts.length; i++) {
+            const r = rainHearts[i];
+            r.y += r.vy;
+            r.rotation += r.spin;
+            drawHeart(r.x, r.y, r.size, r.rotation, r.opacity);
+          }
+          rainHearts = rainHearts.filter((r) => r.y < canvas.height + r.size);
           requestAnimationFrame(animateHearts);
         }
+        setInterval(createRainHeart, 120);
         animateHearts();
-      });
-      heart.style.top = '50%';
-      heart.style.transform = 'translateY(-50%)';
-      heart.style.width = '32px';
-      heart.style.height = '32px';
-      heart.style.background = '#fff';
-      heart.style.borderRadius = '50%';
-      heart.style.display = 'flex';
-      heart.style.alignItems = 'center';
-      heart.style.justifyContent = 'center';
-      heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
-      heart.style.fontSize = '1.2em';
-      heart.style.transition = 'left 1s, background 0.3s';
-      heart.innerHTML = '❤️';
-      // Posição do coração proporcional ao progresso
-      heart.style.left = `calc(${progresso}% - 16px)`;
+      }
+      // Inicia a chuva de corações na tela de contagem
+      iniciarChuvaContador();
+      // Efeito especial (explosão e chuva)
+      function iniciarEfeitoEspecial() {
+        const canvas = document.getElementById('heart-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let hearts = [];
+        let rainHearts = [];
+        const MAX_HEARTS = 120;
+        const MAX_RAIN = 40;
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        function createExplosion() {
+          if (hearts.length > MAX_HEARTS) return;
+          const numExplosions = Math.floor(Math.random() * 2) + 1;
+          for (let e = 0; e < numExplosions; e++) {
+            const centerX = Math.random() * canvas.width;
+            const centerY = Math.random() * canvas.height;
+            const numHearts = 16 + Math.floor(Math.random() * 8);
+            for (let i = 0; i < numHearts; i++) {
+              const angle = (Math.PI * 2 * i) / numHearts;
+              const speed = Math.random() * 5 + 5;
+              const size = Math.random() * 16 + 12;
+              hearts.push({
+                x: centerX,
+                y: centerY,
+                size,
+                speed,
+                angle,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                opacity: 1,
+                spin: (Math.random() - 0.5) * 0.06,
+                rotation: Math.random() * Math.PI * 2,
+              });
+            }
+          }
+        }
+        function createRainHeart() {
+          if (rainHearts.length >= MAX_RAIN) return;
+          const size = Math.random() * 18 + 12;
+          rainHearts.push({
+            x: Math.random() * canvas.width,
+            y: -size,
+            size,
+            vy: Math.random() * 2.5 + 1.5,
+            opacity: Math.random() * 0.5 + 0.5,
+            rotation: Math.random() * Math.PI * 2,
+            spin: (Math.random() - 0.5) * 0.04,
+          });
+        }
+        function drawHeart(x, y, size, rotation, opacity) {
+          ctx.save();
+          ctx.translate(x, y);
+          ctx.rotate(rotation);
+          ctx.globalAlpha = opacity;
+          ctx.beginPath();
+          ctx.moveTo(0, size * 0.3);
+          ctx.bezierCurveTo(size * 0.5, -size * 0.3, size, size * 0.5, 0, size);
+          ctx.bezierCurveTo(
+            -size,
+            size * 0.5,
+            -size * 0.5,
+            -size * 0.3,
+            0,
+            size * 0.3,
+          );
+          ctx.fillStyle = '#ff69b4';
+          ctx.shadowColor = '#ffb6c1';
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          ctx.restore();
+        }
+        function animateHearts() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Explosões
+          if (hearts.length > 0) {
+            for (let i = 0; i < hearts.length; i++) {
+              const h = hearts[i];
+              h.x += h.vx;
+              h.y += h.vy;
+              h.rotation += h.spin;
+              h.opacity -= 0.018;
+              if (h.opacity < 0.08) h.opacity = 0;
+              drawHeart(h.x, h.y, h.size, h.rotation, h.opacity);
+            }
+            hearts = hearts.filter((h) => h.opacity > 0);
+          }
+          // Chuva de corações (pétalas)
+          for (let i = 0; i < rainHearts.length; i++) {
+            const r = rainHearts[i];
+            r.y += r.vy;
+            r.rotation += r.spin;
+            drawHeart(r.x, r.y, r.size, r.rotation, r.opacity);
+          }
+          rainHearts = rainHearts.filter((r) => r.y < canvas.height + r.size);
+          requestAnimationFrame(animateHearts);
+        }
+        setInterval(createExplosion, 2000);
+        setInterval(createRainHeart, 120);
+        createExplosion();
+        animateHearts();
+      }
+      // Só inicia o efeito especial quando mostrarEspecial for chamado
+      document
+        .getElementById('especial-container')
+        .addEventListener('transitionend', iniciarEfeitoEspecial);
+      // Para garantir, também inicia ao mostrar
+      document
+        .getElementById('especial-container')
+        .addEventListener('display', iniciarEfeitoEspecial);
       // Tentar iniciar a música automaticamente
       window.addEventListener('DOMContentLoaded', () => {
         const audio = document.getElementById('romantic-audio');
         if (audio) {
-          // Tenta tocar imediatamente
           const playPromise = audio.play();
           if (playPromise !== undefined) {
             playPromise.catch(() => {
-              // Caso bloqueado, tenta novamente ao interagir
               document.body.addEventListener(
                 'click',
                 () => {
