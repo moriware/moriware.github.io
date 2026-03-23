@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../style.css" />
     <style>
       body {
-        background: linear-gradient(135deg, #ffb6c1 0%, #ffe4e1 100%);
+        background: linear-gradient(135deg, #559cdf 0%, #193994 100%);
         font-family: 'Segoe UI', Arial, sans-serif;
-        color: #a8325c;
+        color: #719dcf;
         min-height: 100vh;
         margin: 0;
         display: flex;
@@ -31,7 +31,6 @@
         margin-top: 40px;
       }
       #contador-container img {
-        margin: 18px 0 0 0;
         display: block;
       }
       .progress-container {
@@ -40,7 +39,7 @@
         max-width: 500px;
         background: #fff;
         border-radius: 30px;
-        box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+        box-shadow: 0 4px 16px rgba(182, 194, 255, 0.3);
         padding: 30px;
         text-align: center;
         align-self: center;
@@ -77,9 +76,10 @@
         }
       }
       h1 {
+        color: #fff;
         margin-top: 40px;
         font-size: 2.5em;
-        text-shadow: 0 2px 8px #fff;
+        text-shadow: 0 2px 8px #b1b270;
       }
       .progress-container {
         margin: 40px 0;
@@ -87,21 +87,21 @@
         max-width: 500px;
         background: #fff;
         border-radius: 30px;
-        box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+        box-shadow: 0 4px 16px rgba(182, 194, 255, 0.3);
         padding: 30px;
         text-align: center;
       }
       .progress-bar {
         width: 100%;
         height: 30px;
-        background: #ffe4e1;
+        background: #719dcf;
         border-radius: 15px;
         overflow: hidden;
         margin-bottom: 20px;
       }
       .progress {
         height: 100%;
-        background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%);
+        background: linear-gradient(90deg, #193994 0%, #559cdf 100%);
         border-radius: 15px;
         transition: width 1s;
       }
@@ -112,7 +112,7 @@
       .love {
         font-size: 1.5em;
         margin-top: 20px;
-        color: #d72660;
+        color: #719dcf;
         text-shadow: 0 2px 8px #fff;
       }
       .heart {
@@ -130,19 +130,168 @@
           transform: scale(1);
         }
       }
+      .sand-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .apple-player {
+        margin-top: 16px;
+        width: min(92vw, 460px);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px;
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.34),
+          rgba(255, 255, 255, 0.12)
+        );
+        box-shadow:
+          0 24px 40px rgba(6, 20, 68, 0.35),
+          inset 0 1px 1px rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .apple-cover-wrap {
+        width: 92px;
+        height: 92px;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 10px 24px rgba(6, 20, 68, 0.38);
+      }
+      .apple-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .apple-track-area {
+        min-width: 0;
+        flex: 1;
+      }
+      .apple-track-title {
+        color: #fff;
+        font-size: 1.02em;
+        font-weight: 700;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .apple-track-artist {
+        margin-top: 2px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.88em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .apple-seek {
+        width: 100%;
+        margin-top: 10px;
+        appearance: none;
+        -webkit-appearance: none;
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.35);
+        outline: none;
+      }
+      .apple-seek::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(6, 20, 68, 0.45);
+        border: none;
+      }
+      .apple-seek::-moz-range-thumb {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(6, 20, 68, 0.45);
+        border: none;
+      }
+      .apple-time {
+        margin-top: 6px;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.76em;
+      }
+      .apple-controls {
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+      .apple-btn {
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.23);
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        transition:
+          transform 0.16s ease,
+          background 0.2s ease;
+      }
+      .apple-btn:hover {
+        background: rgba(255, 255, 255, 0.33);
+      }
+      .apple-btn:active {
+        transform: scale(0.96);
+      }
+      .apple-btn-main {
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        color: #193994;
+        font-size: 15px;
+        box-shadow: 0 8px 18px rgba(6, 20, 68, 0.32);
+      }
+      .apple-btn-main:hover {
+        background: #f6f7ff;
+      }
+      @media (max-width: 600px) {
+        .apple-player {
+          width: min(94vw, 420px);
+          padding: 12px;
+          gap: 10px;
+          border-radius: 22px;
+        }
+        .apple-cover-wrap {
+          width: 74px;
+          height: 74px;
+          border-radius: 16px;
+        }
+        .apple-btn {
+          width: 34px;
+          height: 34px;
+        }
+        .apple-btn-main {
+          width: 40px;
+          height: 40px;
+        }
+      }
     </style>
   </head>
   <body>
-    <audio
-      id="romantic-audio"
-      autoplay
-      loop
-      preload="auto"
-      style="display: none"
-    >
-      <source src="../assets/musica.mp3" type="audio/mpeg" />
-      Seu navegador não suporta o áudio.
-    </audio>
+    <audio id="romantic-audio" preload="metadata"></audio>
     <canvas
       id="heart-canvas"
       style="
@@ -159,34 +308,77 @@
     ></canvas>
     <div id="contador-container" style="margin-top: 40px">
       <div style="display: flex; flex-direction: column; align-items: center">
-        <h1>À espera do nosso encontro</h1>
-        <img
-          src="../assets/rosa.png"
-          alt="Rosa romântica"
-          style="
-            max-width: 220px;
-            width: 100%;
-            border-radius: 18px;
-            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.15);
-            margin: 18px 0 0 0;
-          "
-        />
+        <h1>À espera do nosso show</h1>
+        <div class="apple-player" aria-label="Player de música">
+          <div class="apple-cover-wrap">
+            <img
+              src="../assets/love.jpeg"
+              alt="Capa do player"
+              class="apple-cover"
+            />
+          </div>
+          <div class="apple-track-area">
+            <div id="player-track-title" class="apple-track-title">
+              Lua Cheia
+            </div>
+            <div id="player-track-artist" class="apple-track-artist">
+              Marina Sena
+            </div>
+            <input
+              id="player-seek"
+              class="apple-seek"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+              step="1"
+              aria-label="Progresso da música"
+            />
+            <div class="apple-time">
+              <span id="player-current-time">0:00</span>
+              <span id="player-duration">0:00</span>
+            </div>
+            <div class="apple-controls">
+              <button
+                id="player-prev"
+                type="button"
+                class="apple-btn"
+                aria-label="Voltar música"
+              >
+                &#9198;
+              </button>
+              <button
+                id="player-toggle"
+                type="button"
+                class="apple-btn apple-btn-main"
+                aria-label="Play"
+              >
+                &#9654;
+              </button>
+              <button
+                id="player-next"
+                type="button"
+                class="apple-btn"
+                aria-label="Avançar música"
+              >
+                &#9197;
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="progress-container">
         <div class="days" id="days"></div>
         <div
           class="progress-bar"
-          style="position: relative; background: #ffe4e1"
+          style="position: relative; background: #e1efff"
         >
           <div
             class="progress"
             id="progress"
-            style="background: linear-gradient(90deg, #ff69b4 0%, #ffb6c1 100%)"
+            style="background: linear-gradient(90deg, #193994 0%, #559cdf 100%)"
           ></div>
           <span id="heart-indicator"></span>
-        </div>
-        <div class="love">
-          Cada amanhecer nos aproxima. <span class="heart">❤️</span>
         </div>
       </div>
     </div>
@@ -208,7 +400,7 @@
           margin-top: 120px;
           text-shadow:
             0 4px 32px #fff,
-            0 2px 8px #ffb6c1;
+            0 2px 8px #559cdf;
           font-weight: bold;
           letter-spacing: 0.08em;
           text-align: center;
@@ -238,9 +430,15 @@
         "
       >
         O dia tão esperado chegou, e entre as névoas, encontrei a doçura da tua
-        alma, sendo mais rara que uma flor de pitaya. ❤️
+        alma, sendo mais rara que uma flor de pitaya. 🌙
       </div>
     </div>
+    <img
+      src="../assets/sand.svg"
+      alt=""
+      aria-hidden="true"
+      class="sand-footer"
+    />
     <script>
       // Contador e efeito especial
       function mostrarEspecial() {
@@ -250,11 +448,198 @@
         iniciarEfeitoEspecial();
       }
 
+      function formatMusicTime(seconds) {
+        if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+        const totalSeconds = Math.floor(seconds);
+        const minutes = Math.floor(totalSeconds / 60);
+        const remainingSeconds = String(totalSeconds % 60).padStart(2, '0');
+        return `${minutes}:${remainingSeconds}`;
+      }
+
+      function initRomanticPlayer() {
+        const audio = document.getElementById('romantic-audio');
+        const prevButton = document.getElementById('player-prev');
+        const toggleButton = document.getElementById('player-toggle');
+        const nextButton = document.getElementById('player-next');
+        const seek = document.getElementById('player-seek');
+        const title = document.getElementById('player-track-title');
+        const artist = document.getElementById('player-track-artist');
+        const currentTime = document.getElementById('player-current-time');
+        const duration = document.getElementById('player-duration');
+
+        if (
+          !audio ||
+          !prevButton ||
+          !toggleButton ||
+          !nextButton ||
+          !seek ||
+          !title ||
+          !artist ||
+          !currentTime ||
+          !duration
+        ) {
+          return;
+        }
+
+        const playlist = [
+          {
+            src: '../assets/music/00 Lua Cheia.mp3',
+            title: 'Lua Cheia',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/01 Coisas Naturais.mp3',
+            title: 'Coisas Naturais',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/02 Desmitificar.mp3',
+            title: 'Desmitificar',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/03 Numa Ilha.mp3',
+            title: 'Numa Ilha',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/04 Anjo.mp3',
+            title: 'Anjo',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/05 Sem Lei.mp3',
+            title: 'Sem Lei',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/06 Combo da Sorte.mp3',
+            title: 'Combo da Sorte',
+            artist: 'Marina Sena',
+          },
+          {
+            src: '../assets/music/07 Mágico.mp3',
+            title: 'Mágico',
+            artist: 'Marina Sena',
+          },
+        ];
+
+        let currentTrackIndex = 0;
+        let isSeeking = false;
+
+        function updatePlayButton() {
+          if (audio.paused) {
+            toggleButton.textContent = '▶';
+            toggleButton.setAttribute('aria-label', 'Play');
+            return;
+          }
+          toggleButton.textContent = '❚❚';
+          toggleButton.setAttribute('aria-label', 'Pausar');
+        }
+
+        function updateTrackText() {
+          const track = playlist[currentTrackIndex];
+          title.textContent = track.title;
+          artist.textContent = track.artist;
+        }
+
+        function updateProgressUI() {
+          const hasDuration =
+            Number.isFinite(audio.duration) && audio.duration > 0;
+          if (hasDuration && !isSeeking) {
+            seek.value = String(
+              Math.round((audio.currentTime / audio.duration) * 1000),
+            );
+          }
+          currentTime.textContent = formatMusicTime(audio.currentTime);
+          duration.textContent = hasDuration
+            ? formatMusicTime(audio.duration)
+            : '0:00';
+        }
+
+        function loadTrack(index, autoPlay = false) {
+          currentTrackIndex = (index + playlist.length) % playlist.length;
+          audio.src = encodeURI(playlist[currentTrackIndex].src);
+          audio.load();
+          seek.value = '0';
+          currentTime.textContent = '0:00';
+          duration.textContent = '0:00';
+          updateTrackText();
+
+          if (autoPlay) {
+            audio.play().catch(() => {
+              updatePlayButton();
+            });
+          } else {
+            updatePlayButton();
+          }
+        }
+
+        prevButton.addEventListener('click', () => {
+          loadTrack(currentTrackIndex - 1, !audio.paused);
+        });
+
+        nextButton.addEventListener('click', () => {
+          loadTrack(currentTrackIndex + 1, !audio.paused);
+        });
+
+        toggleButton.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play().catch(() => {
+              updatePlayButton();
+            });
+            return;
+          }
+          audio.pause();
+        });
+
+        seek.addEventListener('input', () => {
+          isSeeking = true;
+          const hasDuration =
+            Number.isFinite(audio.duration) && audio.duration > 0;
+          if (!hasDuration) return;
+          const nextTime = (Number(seek.value) / 1000) * audio.duration;
+          currentTime.textContent = formatMusicTime(nextTime);
+        });
+
+        seek.addEventListener('change', () => {
+          const hasDuration =
+            Number.isFinite(audio.duration) && audio.duration > 0;
+          if (hasDuration) {
+            audio.currentTime = (Number(seek.value) / 1000) * audio.duration;
+          }
+          isSeeking = false;
+        });
+
+        audio.addEventListener('loadedmetadata', updateProgressUI);
+        audio.addEventListener('timeupdate', updateProgressUI);
+        audio.addEventListener('play', updatePlayButton);
+        audio.addEventListener('pause', updatePlayButton);
+        audio.addEventListener('ended', () => {
+          loadTrack(currentTrackIndex + 1, true);
+        });
+
+        loadTrack(0);
+
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            document.body.addEventListener(
+              'click',
+              () => {
+                audio.play().catch(() => {});
+              },
+              { once: true },
+            );
+          });
+        }
+      }
+
       // Contador antigo
       function atualizarContador() {
         const hoje = new Date();
-        const encontro = new Date('2026-02-12T00:00:00');
-        const inicio = new Date('2026-02-01T00:00:00');
+        const encontro = new Date('2026-04-17T00:00:00');
+        const inicio = new Date('2026-03-17T00:00:00');
         const diasTotais = Math.ceil(
           (encontro - inicio) / (1000 * 60 * 60 * 24),
         );
@@ -265,8 +650,8 @@
         const progresso = 100 - (diasRestantes / diasTotais) * 100;
         document.getElementById('days').innerHTML =
           diasRestantes === 0
-            ? 'Hoje é o grande dia, como o clímax do nosso romance! 💖'
-            : `Falta <b>${diasRestantes}</b> dia para te abraçar, ansioso como quem folheia páginas rumo a um final feliz.`;
+            ? 'Hoje é o grande dia, como o clímax do nosso romance! 🌙'
+            : `Faltam apenas <b>${diasRestantes}</b> dias para estar ouvindo Marina Sena com a melhor namorada do mundo.`;
         document.getElementById('progress').style.width = progresso + '%';
         // Indicador de coração na barra
         const barra = document.querySelector('.progress-bar');
@@ -284,7 +669,7 @@
         heart.style.boxShadow = '0 2px 8px rgba(255,182,193,0.2)';
         heart.style.fontSize = '1.2em';
         heart.style.transition = 'left 1s, background 0.3s';
-        heart.innerHTML = '❤️';
+        heart.innerHTML = '🌙';
         heart.style.left = `calc(${progresso}% - 16px)`;
         // Se chegou o dia, mostra especial
         if (diasRestantes === 0) mostrarEspecial();
@@ -322,21 +707,19 @@
           ctx.translate(x, y);
           ctx.rotate(rotation);
           ctx.globalAlpha = opacity;
-          ctx.beginPath();
-          ctx.moveTo(0, size * 0.3);
-          ctx.bezierCurveTo(size * 0.5, -size * 0.3, size, size * 0.5, 0, size);
-          ctx.bezierCurveTo(
-            -size,
-            size * 0.5,
-            -size * 0.5,
-            -size * 0.3,
-            0,
-            size * 0.3,
-          );
-          ctx.fillStyle = '#ff69b4';
-          ctx.shadowColor = '#ffb6c1';
+          const outerRadius = size * 0.65;
+          const centerY = size * 0.35;
+          ctx.fillStyle = '#cdcf51';
           ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.arc(0, centerY, outerRadius, 0, Math.PI * 2);
           ctx.fill();
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.shadowBlur = 0;
+          ctx.beginPath();
+          ctx.arc(size * 0.35, centerY, outerRadius * 0.9, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalCompositeOperation = 'source-over';
           ctx.restore();
         }
         function animateHearts() {
@@ -414,21 +797,20 @@
           ctx.translate(x, y);
           ctx.rotate(rotation);
           ctx.globalAlpha = opacity;
-          ctx.beginPath();
-          ctx.moveTo(0, size * 0.3);
-          ctx.bezierCurveTo(size * 0.5, -size * 0.3, size, size * 0.5, 0, size);
-          ctx.bezierCurveTo(
-            -size,
-            size * 0.5,
-            -size * 0.5,
-            -size * 0.3,
-            0,
-            size * 0.3,
-          );
-          ctx.fillStyle = '#ff69b4';
-          ctx.shadowColor = '#ffb6c1';
+          const outerRadius = size * 0.65;
+          const centerY = size * 0.35;
+          ctx.fillStyle = '#193994';
+          ctx.shadowColor = '#559cdf';
           ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.arc(0, centerY, outerRadius, 0, Math.PI * 2);
           ctx.fill();
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.shadowBlur = 0;
+          ctx.beginPath();
+          ctx.arc(size * 0.35, centerY, outerRadius * 0.9, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalCompositeOperation = 'source-over';
           ctx.restore();
         }
         function animateHearts() {
@@ -469,23 +851,8 @@
       document
         .getElementById('especial-container')
         .addEventListener('display', iniciarEfeitoEspecial);
-      // Tentar iniciar a música automaticamente
       window.addEventListener('DOMContentLoaded', () => {
-        const audio = document.getElementById('romantic-audio');
-        if (audio) {
-          const playPromise = audio.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(() => {
-              document.body.addEventListener(
-                'click',
-                () => {
-                  audio.play();
-                },
-                { once: true },
-              );
-            });
-          }
-        }
+        initRomanticPlayer();
       });
     </script>
   </body>
